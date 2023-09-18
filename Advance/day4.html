@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(18, 18, 18);
+            color: white;
+
+        }
+    </style>
 </head>
+
 <body>
-    
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+
 </body>
+<script>
+    // Add
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+
+    }
+    addLanguage("python")
+
+    // Edit
+
+    const firstli = document.querySelector("li:first-Child")
+    const Secondli = document.querySelector("li:nth-child(2)")
+   
+
+    const newli = document.createElement('li')
+    newli.textContent = "typescript"
+    firstli.replaceWith(newli)
+Secondli.outerHTML = "<li>java</li>"
+
+
+    // Remove
+    const lastli = document.querySelector("li:last-Child")
+lastli.remove()
+
+</script>
+
 </html>
