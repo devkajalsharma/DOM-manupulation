@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(18, 18, 18);
+
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    const div = document.createElement('div');
+    console.log(div)
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.style.backgroundColor = "orange"
+    div.style.padding = "20px"
+    div.style.color = "black"
+    const addtext = document.createTextNode("Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry"
+)
+
+    const button = document.createElement('button')
+    const buttontext = document.createTextNode("read more")
+    button.setAttribute("title", "read more")
+    button.style.display = " flex"
+    button.style.marginTop = "20px"
+    button.style.padding = "10px"
+    button.append(buttontext)
+    div.append(addtext)
+    div.append(button)
+    console.log(div)
+    console.log(button)
+
+    document.body.append(div)
+</script>
+
+</html>
