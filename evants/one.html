@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Images</title>
+    <style>
+        /* Style for the list */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Style for list items (each image) */
+        li {
+            width: 200px;
+            /* Set the width as per your preference */
+            margin: 10px;
+            text-align: center;
+        }
+
+        /* Style for the images */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="images">
+        <li>
+            <img src="images/image1.png" alt="Image 1" id="img">
+            <p>Nature</p>
+        </li>
+        <li>
+            <img src="images/image2.png" alt="Image 2" id="Tiger">
+            <p>Tiger</p>
+        </li>
+        <li>
+            <img src="images/image3.png" alt="Image 3" id="img">
+            <p>frog</p>
+        </li>
+        <li><a href="https://www.google.com/" id="google">GOOGLE</a></li>
+        <!-- Add more <li> elements for additional images -->
+    </ul>
+
+
+    <script>
+        //Event Capturing //
+        // document.getElementById('images').addEventListener('click', function(e){
+        //     console.log("clicked inside the ul")
+        // },true)
+        // document.getElementById('Tiger').addEventListener('click', function(e){
+        //     console.log("Tiger is clicked")
+        // },true)
+
+
+        // event bubbling //
+        // document.getElementById('images').addEventListener('click', function (e) {
+        //     console.log("images clicked")
+        // }, false)
+        // document.getElementById('Tiger').addEventListener('click', function (e) {
+        //     console.log("Tiger is clicked")
+        //     e.stopPropagation()
+        // }, false)
+
+        document.getElementById('google').addEventListener('click', function (e) {
+            console.log("google clicked")
+             e.preventDefault()
+             e.stopPropagation()
+        }, false)
+
+
+        //project
+        document.getElementById('images').addEventListener('click', function(e){
+            let removeit = e.target.parentNode
+            // removeit.remove()
+            removeit.parentNode.removeChild(removeit)
+        })
+
+    </script>
+</body>
+
+</html>
