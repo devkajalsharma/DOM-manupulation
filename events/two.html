@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* styles.css */
+
+        body {
+            font-family: sans-serif;
+
+            text-align: center;
+            background-color: #11206c;
+            display: flex;
+            justify-content: center;
+
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        .container {
+            border: 1px solid white;
+            padding: 100px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.177);
+            border-radius: 10px;
+        }
+
+        .header {
+            color: #ffffff;
+            text-transform: capitalize;
+            font-weight: 500;
+            font-size: 40px;
+        }
+
+        .action-button {
+            padding: 10px 50px;
+            border-radius: 3px;
+            font-size: 16px;
+            background-color: #ffffff;
+            font-weight: 400;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            transition: .2s;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.177);
+        }
+
+        .action-button:hover {
+            background-color: #304fe8;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">Start Changing Color</h1>
+        <button id="startButton" class="action-button">Start</button>
+        <button id="stopButton" class="action-button">Stop</button>
+    </div>
+
+
+    <script>
+        //practice
+        // let start = document.querySelector('#startButton')
+        // let stop = document.querySelector('#stopButton')
+        // start.addEventListener('click', function () {
+        //     const change = (function (str) {
+        //         console.log(str, Date.now())
+        //     })
+
+        //     const intervalId = setInterval(change, 1000, "hi") // to initialte interval
+        // })
+
+        // stop.addEventListener('click', function () {
+
+        //     clearInterval(intervalId) // to stop interval
+
+        // })
+
+        //project
+        let start = document.querySelector('#startButton')
+        let stop = document.querySelector('#stopButton')
+
+        // generate Random Colours
+
+        function RandomColour() {
+            const hex = '0123456789ABCDEF';
+            let color = '#'
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)]
+            }
+            return color
+        }
+        let intervalId;
+        function startchangingColor() {
+            intervalId = setInterval(changeColour, 1000)
+            function changeColour() {
+                document.body.style.backgroundColor = RandomColour();
+
+            }
+}
+        function stopchangingColor() {
+
+            clearInterval(intervalId)
+            intervalId = null;
+            console.log(intervalId)
+
+        }
+
+        start.addEventListener('click', startchangingColor);
+        stop.addEventListener('click', stopchangingColor);
+
+
+
+
+
+    </script>
+</body>
+
+</html>
