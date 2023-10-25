@@ -48,7 +48,7 @@ promise2.then((user) => {
 
 
 
-// async and await
+// async/await
 
 const newPromise = new Promise(function (resolve, reject) {
     setTimeout(function () {
@@ -70,3 +70,40 @@ async function handlepromise(){
    }
 }
 handlepromise()
+
+
+async function handlepromise(){
+   try {
+    const response = await newPromise
+    console.log(response)
+   } catch (error) {
+    console.log(error)
+   }
+}
+handlepromise()
+
+
+async function Getallusers() {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users")
+        const data = await response.json()
+        console.log(data)
+    } catch (error) {
+        console.log("ERROR:", error)
+    }
+}
+Getallusers()
+
+
+
+// then and catch method
+
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then((response) => {
+        
+        return response.json()
+    }).then((data) => {
+        console.log(data)
+    }).catch((error) => {
+        console.log(error)
+    })
