@@ -48,37 +48,26 @@ promise2.then((user) => {
 
 
 
-// async/await
+// async and await
 
 const newPromise = new Promise(function (resolve, reject) {
     setTimeout(function () {
         let error = true
-        if(!error) {
+        if (!error) {
             resolve({ username: "hitesh", rollno: "234" })
         }
         else
-        reject('Something Went Wrong')
+            reject('Something Went Wrong')
     }, 1000)
 })
 
-async function handlepromise(){
-   try {
-    const response = await newPromise
-    console.log(response)
-   } catch (error) {
-    console.log(error)
-   }
-}
-handlepromise()
-
-
-async function handlepromise(){
-   try {
-    const response = await newPromise
-    console.log(response)
-   } catch (error) {
-    console.log(error)
-   }
+async function handlepromise() {
+    try {
+        const response = await newPromise
+        console.log(response)
+    } catch (error) {
+        console.log(error)
+    }
 }
 handlepromise()
 
@@ -99,11 +88,11 @@ Getallusers()
 // then and catch method
 
 fetch("https://jsonplaceholder.typicode.com/users")
-    .then((response) => {
-        
-        return response.json()
-    }).then((data) => {
-        console.log(data)
-    }).catch((error) => {
+   .then((response) => {
+
+       return response.json()
+   }).then((data) => {
+       console.log(data)
+   }).catch((error) => {
         console.log(error)
-    })
+ })
