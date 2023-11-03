@@ -31,3 +31,38 @@ myarray.heyarray()
 heropower.heyarray()
 
 
+
+// example of creating method
+
+const createanotherUser = "me&javascript    ";
+
+
+// truelength method is created now
+String.prototype.truelength = function () {
+    console.log(`${this}`)
+    console.log(`true length is : ${this.trim().length}`);
+}
+
+createanotherUser.truelength()
+"string".truelength()
+
+//practice work //
+
+const students = {
+    name: "raj",
+    class: "5th"
+};
+
+const teacher = {
+    makevideo: true
+};
+
+const teacherSupport = {
+    isavailable: false,
+    __proto__: teacher
+};
+// modern syntax //
+
+console.log(teacherSupport)
+
+Object.setPrototypeOf(teacherSupport, students)
