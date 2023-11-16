@@ -21,3 +21,35 @@ class user {
 const me = new user("kajal@gmail.com", "12345")
 console.log(me.email)
 console.log(me.password)
+
+
+// example 2
+// emample 2
+class person {
+    constructor(name, age) {
+        this.name = name,
+            this.age = age
+    }
+    get name() {
+        return this._name = this._name.toUpperCase();
+    }
+    set name(value) {
+        this._name = value
+    }
+
+    get age() {
+        return this._age 
+    }
+    set age(value) {
+        if(value>=0 && value <=120){
+            return this._age = value
+        }
+        else{
+            console.error("invalid age entered")
+        }
+    }
+}
+
+const person1 = new person("suraj", 10)
+console.log(person1.name)
+console.log(person1.age)
