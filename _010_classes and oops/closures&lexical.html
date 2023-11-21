@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // lexical Scope //
+    function Outer() {
+        let userName = "Hammer"
+
+        function Inner() {
+            console.log(userName) // accessing value from outer function
+        }
+        Inner()
+    }
+
+    Outer();
+
+
+    // closures //
+
+    function outerFunction() {
+        let outerVariable = "I am from outerFunction";
+
+        function innerFunction() {
+            console.log(outerVariable); // accessing value from outer function 
+        }
+
+        return innerFunction;
+    }
+
+    const closureFunction = outerFunction();
+    closureFunction(); // This will still log "I am from outerFunction"
+
+
+</script>
+
+</html>
